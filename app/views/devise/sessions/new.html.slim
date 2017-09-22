@@ -1,0 +1,14 @@
+.container
+  .row
+    .col-md-4.col-md-offset-4
+      .well
+        h2 Connexion
+
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .form-group
+            = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email'
+          .form-group
+            = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Mot de passe'
+
+          .form-group
+            = f.submit "Log in"

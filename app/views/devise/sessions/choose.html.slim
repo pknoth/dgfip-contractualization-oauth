@@ -1,0 +1,9 @@
+.container
+  .row
+    .col-md-4.col-md-offset-4
+      .well
+        ul.list-group
+          li.list-group-item
+            = link_to "se connecter en tant que #{current_user.email}", new_user_session_path
+          li.list-group-item
+            = link_to "se connecter en tant qu'un autre utilisateur", destroy_user_session_path, method: :delete
