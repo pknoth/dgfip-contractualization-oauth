@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /opt/apps/dgfip-contractualization-oauth/dgfip-contractualization-oauth
+puma -C ./config/puma.rb
