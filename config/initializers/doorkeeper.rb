@@ -4,7 +4,7 @@ Doorkeeper.configure do
 
   # This block will be called to check whether the resource owner is authenticated or not.
   resource_owner_authenticator do
-    if params[:from_devise]
+    if session['from_devise']
       current_user
     else
       session['authorize_url'] = request.url
@@ -115,7 +115,7 @@ Doorkeeper.configure do
   # realm "Doorkeeper"
 end
 
-module DoorkeeperApplicationsAdditions
+module SkipCSRF
   extend ActiveSupport::Concern
 
   included do
@@ -123,4 +123,4 @@ module DoorkeeperApplicationsAdditions
   end
 end
 
-Doorkeeper::ApplicationsController.send(:include, DoorkeeperApplicationsAdditions)
+Doorkeeper::ApplicationController.send(:include, SkipCSRF)

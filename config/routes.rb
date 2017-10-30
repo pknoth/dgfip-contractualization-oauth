@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :oauth do
+    resources :users
+  end
   devise_for :users
   devise_scope :user do
     get 'session/choose', to: 'users/sessions#choose'

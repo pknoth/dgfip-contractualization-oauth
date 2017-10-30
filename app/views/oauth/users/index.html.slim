@@ -1,0 +1,20 @@
+h1 Users
+
+table.table.table-stripped
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @oauth_users.each do |oauth_user|
+      tr
+        td = oauth_user.email
+        /td = link_to 'Show', oauth_user_path(oauth_user), class: 'btn btn-xs btn-default'
+        td = link_to 'Edit', edit_oauth_user_path(oauth_user), class: 'btn btn-xs btn-default'
+        td = link_to 'Destroy', oauth_user_path(oauth_user), data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-xs btn-default'
+
+br
+
+= link_to 'New User', new_oauth_user_path
