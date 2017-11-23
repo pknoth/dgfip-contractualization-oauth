@@ -1,3 +1,5 @@
+require_relative '../../lib/doorkeeper/errors'
+
 Doorkeeper.configure do
   # Change the ORM that doorkeeper will use (needs plugins)
   orm :active_record
@@ -7,9 +9,7 @@ Doorkeeper.configure do
     if session['from_devise']
       current_user
     else
-      session['authorize_url'] = request.url
-      redirect_to(session_choose_path)
-      nil
+      raise Doorkeeper::ShouldChooseUser
     end
   end
 
@@ -114,13 +114,3 @@ Doorkeeper.configure do
   # WWW-Authenticate Realm (default "Doorkeeper").
   # realm "Doorkeeper"
 end
-
-module SkipCSRF
-  extend ActiveSupport::Concern
-
-  included do
-    skip_before_action :verify_authenticity_token
-  end
-end
-
-Doorkeeper::ApplicationController.send(:include, SkipCSRF)

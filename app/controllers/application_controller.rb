@@ -1,5 +1,10 @@
 class ApplicationController < ActionController::Base
 
+  rescue_from Doorkeeper::ShouldChooseUser do
+    session['authorize_url'] = request.url
+    redirect_to(session_choose_path)
+  end
+
   protected
 
   def authenticate_admin!
