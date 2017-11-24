@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     root to: "devise/sessions#new"
   end
 
-  use_doorkeeper
+  use_doorkeeper do
+    controllers authorizations: 'doorkeeper/authorizations'
+  end
 
   namespace :api do
     namespace :v1 do

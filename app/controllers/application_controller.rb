@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
   rescue_from Doorkeeper::ShouldChooseUser do
-    session['authorize_url'] = request.url
+    store_location_for(:user, request.url)
     redirect_to(session_choose_path)
   end
 
@@ -15,11 +15,5 @@ class ApplicationController < ActionController::Base
 
   def after_destroy_user_session_path_for(_resource)
     new_user_session_path
-  end
-
-  def after_sign_in_path_for(resource_or_scope)
-    return signed_in_root_path(resource_or_scope) unless session['authorize_url']
-    session['from_devise'] = true
-    session['authorize_url']
   end
 end

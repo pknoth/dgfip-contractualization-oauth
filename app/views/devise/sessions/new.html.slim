@@ -5,6 +5,11 @@
         h2 Connexion
 
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          - if flash.alert
+            .alert.alert-danger
+              == flash.alert
+          .form-group
+            = f.select :resource_provider_id, ResourceProvider.all.map { |e| [e.name, e.id] }, {}, class: 'form-control'
           .form-group
             = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email'
           .form-group
