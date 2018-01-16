@@ -13,7 +13,7 @@ gem 'puma', '~> 3.7'
 gem 'rack-cors'
 gem 'rails', '~> 5.1.4'
 gem 'slim-rails'
-gem 'sqlite3'
+gem 'pg'
 
 group :development, :test do
   gem 'factory_girl_rails'

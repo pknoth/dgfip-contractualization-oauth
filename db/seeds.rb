@@ -1,6 +1,23 @@
 resource_provider = ResourceProvider.where(name: 'dgfip').first_or_create
 User.create(
-  email: 'test@user.user',
+  email: 'test@domain.user',
   password: 'password',
-  resource_provider: resource_provider
+  resource_provider: resource_provider,
+  roles: ['domain']
+)
+User.create(
+  email: 'test@technician.user',
+  password: 'password',
+  resource_provider: resource_provider,
+  roles: ['technician']
+)
+app = Doorkeeper::Application.create(
+  'name' => 'test',
+  'uid' => '82546188522214c3577d35c283ce8842786649b35a026a9d44908037a597f29b',
+  'secret' => '1ff180ba922fbbbb4cf6fe0d3e82efadaa48a14de454a2137e2d656aac5e97c4',
+  'redirect_uri' => 'https://change.me',
+  'scopes' => 'enrollments user'
+)
+app.update_attribute(
+  :redirect_uri, 'http://localhost:3000/users/auth/resource_provider/callback'
 )
