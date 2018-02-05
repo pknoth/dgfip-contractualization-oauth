@@ -6,10 +6,10 @@ User.create(
   roles: ['domain']
 )
 User.create(
-  email: 'test@technician.user',
+  email: 'test@security.user',
   password: 'password',
-  resource_provider: resource_provider,
-  roles: ['technician']
+  resource_provider: ResourceProvider.first,
+  roles: ['security']
 )
 app = Doorkeeper::Application.create(
   'name' => 'test',
