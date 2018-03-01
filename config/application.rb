@@ -15,6 +15,8 @@ module DgfipContractualization
     config.assets.prefix = "/oauth/assets"
     config.autoload_paths << "#{Rails.root}/lib"
 
+    config.i18n.default_locale = :fr
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

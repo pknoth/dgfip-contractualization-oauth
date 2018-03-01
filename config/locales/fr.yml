@@ -1,0 +1,6 @@
+fr:
+  activerecord:
+    values:
+      account_type:
+        service_provider: Fournisseur de service
+        dgfip: DGFIP

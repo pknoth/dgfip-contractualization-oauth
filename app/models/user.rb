@@ -1,15 +1,15 @@
 class User < ApplicationRecord
-  devise :database_authenticatable
+  devise :database_authenticatable, :registerable
 
-  belongs_to :resource_provider
+  belongs_to :account_type
   has_many :access_grants, class_name: 'Doorkeeper::AccessGrant', foreign_key: 'resource_owner_id'
 
-  validates :email, uniqueness: { scope: :resource_provider }, presence: true
+  validates :email, uniqueness: { scope: :account_type }, presence: true
 
   def self.find_for_authentication(warden_conditions)
     where(
       email: warden_conditions[:email],
-      resource_provider_id: warden_conditions[:resource_provider_id]
+      account_type_id: warden_conditions[:account_type_id]
     ).first
   end
 
