@@ -1,6 +1,10 @@
 html
   head
     link href='https://rawgit.com/etalab/template.data.gouv.fr/master/template.css' rel='stylesheet'
+<<<<<<< Updated upstream
+=======
+    = javascript_include_tag 'application'
+>>>>>>> Stashed changes
     = javascript_pack_tag 'application'
     = stylesheet_link_tag :application
     = csrf_meta_tags
