@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /opt/apps/dgfip-contractualization-oauth/dgfip-contractualization-oauth
+cd /opt/apps/api-particulier-courtier-oauth/api-particulier-courtier-oauth
 puma -C ./config/puma.rb
