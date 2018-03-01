@@ -1,5 +1,10 @@
 fr:
   activerecord:
+    models:
+      account_type: Type de compte
+    attributes:
+      user:
+        account_type_id: Type de compte
     values:
       account_type:
         service_provider: Fournisseur de service

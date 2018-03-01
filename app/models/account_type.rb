@@ -1,11 +1,13 @@
 class AccountType < ApplicationRecord
   has_many :users
 
-  def dgfip
-    where(name: 'dgfip').first
-  end
+  class << self
+    def dgfip
+      where(name: 'dgfip').first
+    end
 
-  def service_provider
-    where(name: 'service_provider').first
+    def service_provider
+      where(name: 'service_provider').first
+    end
   end
 end
