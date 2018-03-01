@@ -5,4 +5,4 @@ section
         = link_to "se connecter en tant que #{current_user.email}", new_user_session_path
     .notification.warning
       p.section__subtitle
-        = link_to "se connecter en tant qu'un autre utilisateur", destroy_user_session_path, method: :delete
+        = link_to "se connecter en tant qu'un autre utilisateur", destroy_user_session_path

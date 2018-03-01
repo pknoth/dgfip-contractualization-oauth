@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
   devise_scope :user do
     get 'session/choose', to: 'users/sessions#choose'
+    get 'users/sign_out', to: 'users/sessions#destroy'
     root to: "users/sessions#choose"
   end
 
