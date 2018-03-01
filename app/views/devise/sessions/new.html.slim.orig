@@ -1,0 +1,35 @@
+section
+  .container
+    h2.section__title Connexion
+
+<<<<<<< c97c5c09fce87de03dcc7e3691d88f6c328e29f3
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          - if flash.alert
+            .alert.alert-danger
+              == flash.alert
+          .form-group
+            = f.select :account_type_id, AccountType.all.map { |e| [t("activerecord.values.account_type.#{e.name}"), e.id] }, {}, class: 'form-control'
+          .form-group
+            = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email'
+          .form-group
+            = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Mot de passe'
+
+          .form-group
+            = f.submit "Log in", class: 'btn btn-primary btn-block'
+          p
+            = link_to "créez un compte", new_user_registration_path
+=======
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      - if flash.alert
+        .notification.error
+          == flash.alert
+      .form__group
+        = f.select :resource_provider_id, ResourceProvider.all.map { |e| [e.name, e.id] }, {}, class: 'form-control'
+      .form__group
+        = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email'
+      .form__group
+        = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Mot de passe'
+
+      .form__group
+        = f.submit "Log in", class: 'btn btn-primary btn-block'
+>>>>>>> enable react rendering with api-particulier next layout

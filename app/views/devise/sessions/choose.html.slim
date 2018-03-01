@@ -1,8 +1,8 @@
-.container
-  .well.text-center
-    .alert.alert-success
+section
+  .container
+    .notification.success
       p.section__subtitle
         = link_to "se connecter en tant que #{current_user.email}", new_user_session_path
-    .alert.alert-warning
+    .notification.warning
       p.section__subtitle
         = link_to "se connecter en tant qu'un autre utilisateur", destroy_user_session_path, method: :delete
