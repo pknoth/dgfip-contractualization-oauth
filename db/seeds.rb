@@ -1,14 +1,15 @@
-resource_provider = ResourceProvider.where(name: 'dgfip').first_or_create
+AccountType.where(name: 'service_provider').first_or_create
+AccountType.where(name: 'dgfip').first_or_create
 User.create(
   email: 'test@domain.user',
   password: 'password',
-  resource_provider: resource_provider,
+  account_type: AccountType.dgfip,
   roles: ['domain']
 )
 User.create(
   email: 'test@security.user',
   password: 'password',
-  resource_provider: ResourceProvider.first,
+  account_type: AccountType.dgfip,
   roles: ['security']
 )
 app = Doorkeeper::Application.create(

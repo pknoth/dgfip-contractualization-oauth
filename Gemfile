@@ -6,12 +6,14 @@ git_source(:github) do |repo_name|
 end
 
 gem 'devise'
+gem 'devise-i18n'
 gem 'doorkeeper'
 gem 'jquery-rails'
 gem 'omniauth-oauth2'
 gem 'puma', '~> 3.7'
 gem 'rack-cors'
 gem 'rails', '~> 5.1.4'
+gem 'rails-i18n'
 gem 'slim-rails'
 gem 'pg'
 

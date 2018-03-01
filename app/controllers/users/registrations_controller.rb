@@ -36,7 +36,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
+
+  def sign_up_params
+    super.merge(account_type: AccountType.service_provider)
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params

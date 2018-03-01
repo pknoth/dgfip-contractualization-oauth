@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  namespace :oauth do
-    resources :users
-  end
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   devise_scope :user do
     get 'session/choose', to: 'users/sessions#choose'
-    root to: "devise/sessions#new"
+    root to: "users/sessions#choose"
   end
 
   use_doorkeeper do

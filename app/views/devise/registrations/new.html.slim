@@ -1,0 +1,20 @@
+section
+  .container
+    .well
+      h2 Créez un compte
+
+      = form_for(resource, as: resource_name, url: user_registration_path) do |f|
+        = devise_error_messages!
+
+        .form-group
+          = f.label :email
+          = f.email_field :email, autofocus: true, class: 'form-control'
+        .form-group
+          = f.label :password
+          = f.password_field :password, class: 'form-control'
+        .form-group
+          = f.label :password_confirmation
+          = f.password_field :password_confirmation, class: 'form-control'
+        .form-group
+          = f.submit "Soumettre", class: 'btn btn-block btn-primary'
+      = link_to "Se connecter", new_user_session_path
