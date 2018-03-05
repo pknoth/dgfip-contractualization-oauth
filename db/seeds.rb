@@ -20,5 +20,5 @@ app = Doorkeeper::Application.create(
   'scopes' => 'enrollments user'
 )
 app.update_attribute(
-  :redirect_uri, 'http://localhost:3000/users/auth/resource_provider/callback'
+  :redirect_uri, 'http://localhost:3000'
 )

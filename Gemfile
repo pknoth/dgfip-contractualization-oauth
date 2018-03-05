@@ -8,6 +8,7 @@ end
 gem 'devise'
 gem 'devise-i18n'
 gem 'doorkeeper'
+gem 'doorkeeper-i18n'
 gem 'jquery-rails'
 gem 'omniauth-oauth2'
 gem 'pg'

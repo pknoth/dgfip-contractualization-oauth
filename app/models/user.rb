@@ -14,13 +14,13 @@ class User < ApplicationRecord
   end
 
   def current_scopes
-    access_grants.last.scopes.to_a
+    access_grants.last&.scopes&.to_a
   end
 
   def as_json(*params)
     super.merge(
       scopes: current_scopes,
-      resource_provider: resource_provider.name,
+      account_type: account_type.name,
       roles: roles,
       uid: id
     )
