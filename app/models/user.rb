@@ -8,8 +8,7 @@ class User < ApplicationRecord
 
   def self.find_for_authentication(warden_conditions)
     where(
-      email: warden_conditions[:email],
-      account_type_id: warden_conditions[:account_type_id]
+      email: warden_conditions[:email]
     ).first
   end
 
