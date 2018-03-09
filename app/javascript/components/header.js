@@ -13,9 +13,6 @@ const Header = () => (
           <li><Link href='/documentation'><a>Documentation technique</a></Link></li>
           <li><Link href='/contact'><a>Contactez-nous</a></Link></li>
         </ul>
-        <a className='nav__link' href='/'>
-          <img className='nav__logo' src='http://next.particulier.api.gouv.fr/static/images/file-icon.svg' alt='Ma sélection de jeux de données' />
-        </a>
       </div>
     </nav>
   </header>
