@@ -1,0 +1,20 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main {
+  width: 100%;
+  background: transparent;
+}
+section {
+  max-width: 800px;
+  margin: auto;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+.title {
+  width: 200px;
+  margin: 20px auto;
+}

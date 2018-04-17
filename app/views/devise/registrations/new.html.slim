@@ -1,6 +1,6 @@
 section
   .container
-    h2.section__title Créez un compte
+    h3.section__title Créez un compte
 
     = form_for(resource, as: resource_name, url: user_registration_path) do |f|
       = devise_error_messages!
@@ -16,4 +16,5 @@ section
         = f.password_field :password_confirmation
       .form__group
         = f.submit "Soumettre"
-      = link_to 'Se connecter', new_user_session_path
+      .text-right
+        = link_to 'Se connecter', new_user_session_path
