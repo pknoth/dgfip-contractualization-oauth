@@ -15,6 +15,7 @@ section
         = f.label :password_confirmation
         = f.password_field :password_confirmation
       .form__group
-        = f.submit "Soumettre"
-      .text-right
-        = link_to 'Se connecter', new_user_session_path
+        button.button.large(type="submit") Soumettre
+.container
+  .text-center
+    p = link_to 'Se connecter', new_user_session_path

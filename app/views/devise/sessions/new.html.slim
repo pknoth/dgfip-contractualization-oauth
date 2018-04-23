@@ -12,6 +12,7 @@ section
         = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Mot de passe'
 
       .form__group
-        = f.submit "Connexion", class: 'btn btn-primary btn-block'
-      .text-right
-        = link_to "Créez un compte", new_user_registration_path
+        button.button.large(type="submit") Connexion
+.container
+  .text-center
+    p = link_to "Créez un compte", new_user_registration_path
