@@ -2,12 +2,10 @@ class AccountType < ApplicationRecord
   has_many :users
 
   class << self
-    def dgfip
-      where(name: 'dgfip').first
-    end
-
-    def service_provider
-      where(name: 'service_provider').first
+    %w[service_provider api_particulier dgfip cnaf].each do |role|
+      define_method(role.to_sym) do
+        find_by(name: role)
+      end
     end
   end
 end

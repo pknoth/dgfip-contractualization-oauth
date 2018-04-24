@@ -2,7 +2,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable
 
   belongs_to :account_type
-  has_many :access_grants, class_name: 'Doorkeeper::AccessGrant', foreign_key: 'resource_owner_id'
+  has_many :access_tokens, class_name: 'Doorkeeper::AccessToken', foreign_key: 'resource_owner_id'
 
   validates :email, uniqueness: { scope: :account_type }, presence: true
 
@@ -13,7 +13,7 @@ class User < ApplicationRecord
   end
 
   def current_scopes
-    access_grants.last&.scopes&.to_a
+    access_tokens.last&.scopes&.to_a
   end
 
   def as_json(*params)

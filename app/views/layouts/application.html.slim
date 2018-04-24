@@ -1,11 +1,13 @@
 html
   head
+  link rel="apple-touch-icon" sizes="180x180" href="https://next.particulier.api.gouv.fr/static/favicons/apple-icon-180x180.png"
+  link rel="icon" type="image/png" sizes="16x16" href="https://next.particulier.api.gouv.fr/static/favicons/favicon-16x16.png"
+  link rel="icon" type="image/png" sizes="32x32" href="https://next.particulier;api.gouv.fr/static/favicons/favicon-32x32.png"
     link href='https://rawgit.com/etalab/template.data.gouv.fr/master/template.css' rel='stylesheet'
-    = javascript_pack_tag 'application'
     = stylesheet_link_tag :application
     = csrf_meta_tags
   body
-    = react_component "header"
     .main
+      .text-center
+        img class="title" src="https://api.gouv.fr/img/logo_api.svg" alt="Accueil de signup.api.gouv.fr"
       = yield
-    = react_component "footer"

@@ -18,7 +18,6 @@ gem 'rails', '~> 5.1.4'
 gem 'rails-i18n'
 gem 'react-rails'
 gem 'slim-rails'
-gem 'webpacker'
 
 group :development, :test do
   gem 'factory_girl_rails'

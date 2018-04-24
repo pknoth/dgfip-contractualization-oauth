@@ -1,4 +1,6 @@
 require_relative '../../lib/doorkeeper/errors'
+require_relative '../../lib/doorkeeper/access_token_additions'
+require 'doorkeeper'
 
 Doorkeeper.configure do
   # Change the ORM that doorkeeper will use (needs plugins)
@@ -113,4 +115,9 @@ Doorkeeper.configure do
 
   # WWW-Authenticate Realm (default "Doorkeeper").
   # realm "Doorkeeper"
+end
+
+require 'doorkeeper/orm/active_record/access_token'
+DgfipContractualization::Application.config.after_initialize do
+  Doorkeeper::AccessToken.send(:include, Doorkeeper::AccessTokenAdditions)
 end

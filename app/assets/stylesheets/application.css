@@ -1,0 +1,26 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main {
+  flex: 1;
+  width: 100%;
+  background: transparent;
+}
+section {
+  max-width: 800px;
+  margin: auto;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+.title {
+  width: 200px;
+  margin: 20px auto;
+  height: auto
+}
+.button.large, .button.large:focus {
+  width: 100%;
+  display: block;
+}
