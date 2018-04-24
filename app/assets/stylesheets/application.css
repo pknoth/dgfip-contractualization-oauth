@@ -20,6 +20,7 @@ section {
   margin: 20px auto;
   height: auto
 }
-.button.large {
+.button.large, .button.large:focus {
   width: 100%;
+  display: block;
 }
