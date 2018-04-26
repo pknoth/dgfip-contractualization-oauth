@@ -19,7 +19,7 @@ Doorkeeper.configure do
 
   admin_authenticator do
     authenticate_or_request_with_http_basic do |username, password|
-      username == "foo" && password == "bar"
+      username == ENV['ADMIN_LOGIN'] && password == ENV['ADMIN_PASSWORD']
     end
   end
 
