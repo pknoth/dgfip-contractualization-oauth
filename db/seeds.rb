@@ -35,5 +35,5 @@ app = Doorkeeper::Application.where(
   'scopes' => 'enrollments user'
 ).first_or_create
 app.update_attribute(
-  :redirect_uri, 'http://localhost:3000'
+  :redirect_uri, 'http://localhost:3000/oauth-callback'
 )
