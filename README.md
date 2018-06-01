@@ -1,8 +1,8 @@
-# README
+# Signup.api.gouv.fr Oauth
 
-## INSTALL
+Installation instructions can be found [here](https://github.com/betagouv/signup.api.gouv.fr-docker).
 
-```
+```bash
 bundle
 yarn
 rake db:migrate
