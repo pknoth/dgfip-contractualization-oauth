@@ -16,16 +16,22 @@ AccountType.api_particulier.update(
   ]
 )
 User.create(
-  email: 'test@domain.user',
+  email: 'particulier@domain.user',
   password: 'password',
-  account_type: AccountType.dgfip,
+  account_type: AccountType.api_particulier,
   roles: ['domain']
 )
 User.create(
-  email: 'test@security.user',
+  email: 'entreprise@domain.user',
+  password: 'password',
+  account_type: AccountType.api_entreprise,
+  roles: ['domain']
+)
+User.create(
+  email: 'dgfip@domain.user',
   password: 'password',
   account_type: AccountType.dgfip,
-  roles: ['security']
+  roles: ['domain']
 )
 app = Doorkeeper::Application.where(
   'name' => 'test',
