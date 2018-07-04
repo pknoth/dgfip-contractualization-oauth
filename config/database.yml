@@ -29,7 +29,7 @@ test:
 
 production:
   <<: *default
-  database: dgfip_oauth
+  database: <%= ENV.fetch('PG_DATABASE', 'dgfip_oauth') %>
   host: localhost
   user: <%= ENV.fetch('PG_USER', nil) %>
   password: <%= ENV.fetch('PG_PASSWORD', nil) %>
