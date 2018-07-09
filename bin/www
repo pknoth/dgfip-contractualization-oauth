@@ -1,4 +1,0 @@
-#!/bin/bash
-
-cd /opt/apps/api-particulier-courtier-oauth/api-particulier-courtier-oauth
-puma -C ./config/puma.rb
